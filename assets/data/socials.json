@@ -1,13 +1,6 @@
 {
     "links": [
         {
-            "platform": "x-twitter",
-            "platform_descriptor": "X (Formerly Twitter)",
-            "link": "http://x.com/@rgibsonmusic/",
-            "link_descriptor": "Rachael Gibson on X (Formerly Twitter)",
-            "weight": 100
-        },
-        {
             "platform": "instagram",
             "platform_descriptor": "Instagram",
             "link": "https://www.instagram.com/rgibsonmusic/",

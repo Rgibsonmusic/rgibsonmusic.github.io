@@ -19,6 +19,17 @@
             "time": "19:00",
             "location": "O2 Academy, Liverpool",
             "link": "https://www.tabithariley.co.uk/"
+        },
+        {
+                "show": true,
+                "title": "LSO SoundHub Showcase",
+                "description": "Showcase of works from the London Symphony Orchestra SoundHub.",
+                "date": "16 May 2025",
+                "time": "19:00",
+                "location": "The Nave, St John's Waterloo, London",
+                "location_google_url": "https://maps.app.goo.gl/UH7Fqx6XAq1B6sFC9",
+                "link": "https://www.lso.co.uk/whats-on/soundhub-showcase-16-may-2025/",
+                "link_label": "🎟 Get tickets"
         }
     ]
 }
