@@ -1,0 +1,21 @@
+{{ $data := dict }}
+{{ with resources.Get "data/socials.json" }}
+    <ul class="socials">
+        {{ with . | transform.Unmarshal }}
+            {{ $data = . }}
+            {{ range sort $data.links "weight" }}
+                <li>
+                    <a 
+                        href="{{ .link }}" 
+                        aria-label="{{ .link_descriptor }}" 
+                        class="social-link social-link__{{ .platform }}"
+                        rel="noreferrer"
+                        target="_blank"
+                    >
+                        {{ partial "icon" (dict "context" . "semantic" true "focusable" true "faStyle" "brands" "faName" .platform "alt" .platform_descriptor "id" "" "faAdditional" "fa-fw")}}
+                    </a>
+                </li>
+            {{ end }}
+        {{ end }}
+    </ul>
+{{ end }}

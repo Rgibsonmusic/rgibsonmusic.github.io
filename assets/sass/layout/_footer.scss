@@ -1,0 +1,22 @@
+/*--------------------------------------------------------------
+# Components: Footer
+----------------------------------------------------------------
+Description: Styling the repeating footer element
+*/
+
+// Package: rgibsonmusic
+
+
+footer.main-footer {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    clear: both;
+    background-color: var(--header-bg);
+
+    p, a {
+        font-size: .8rem;
+        line-height: .2rem;
+    }
+}

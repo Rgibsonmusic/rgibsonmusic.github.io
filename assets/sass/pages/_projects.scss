@@ -1,0 +1,335 @@
+/*--------------------------------------------------------------
+# Pages: Projects
+----------------------------------------------------------------
+Description: Styling specific to projects list and single pages
+*/
+
+// Package: rgibsonmusic
+
+main.project {
+    div.title {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 8px;
+        overflow: hidden;
+
+        display: grid;
+        place-items: center;
+
+        padding: 1rem 2rem;
+
+        text-align: center;
+
+        margin-bottom: 1.2rem;
+
+        h1 {
+            font-size: 5rem;
+            color: var(--default-white);
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: var(--border);
+            font-weight: 900;
+        }
+    }
+
+    section {
+        figure:not(.iframe-figure) {
+            width: min-content;
+            margin: 1rem;
+            max-width: 80vw;
+        }
+        figure figcaption p {
+            margin: 0;
+        }
+        figure.float-right {
+            float: right;
+        }
+        img {
+            max-width: 500px;
+            border-radius: 8px;
+        }
+    }
+
+    div.projects-navigation {
+        width: 80%;
+        padding: 1rem;
+        margin: 1rem auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-flow: row-reverse nowrap;
+    }
+}
+
+main.projects {
+
+    ul.card-wrapper {
+        list-style-type: none;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-flow: row wrap;
+        padding: 0;
+
+        li.project-card {
+            border: 3px solid var(--border);
+            border-radius: 8px;
+            margin: .5rem;
+            width: 550px;
+            height: 140px;
+            background-color: var(--container-bg);
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: row nowrap;
+
+            div.info {
+                height: 100%;
+                width: auto;
+                flex-grow: 3;
+                min-width: 200px;
+
+                p {
+                    height: 100%;
+                    overflow-y: scroll;
+                    padding: .2rem;
+                    margin: 0;
+                    border-top: 3px solid var(--border);
+                }
+
+
+                h2 {
+                    margin: 0;
+                    padding: .2rem .5rem;
+                    background-color: var(--default-teal);
+                    border: 3px solid var(--default-white);
+                    color: var(--default-black);
+                    font-size: 1.4rem;
+                    border-radius: 8px;
+                }
+            }
+
+            a {
+                display: grid;
+                place-items: center;
+                text-align: center;
+                padding: .2rem;
+                height: 100%;
+                min-width: 6rem;
+                border-left: 3px solid var(--border);
+                transition: .2s ease;
+                color: var(--default-black);
+                font-size: 3rem;
+                font-weight: 700;
+
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+
+                span.label-wrapper {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-flow: column nowrap;
+                    border-radius: 5px;
+                    padding: .2rem;
+                    transition: .2s ease;
+                }
+
+                span.label {
+                    visibility: hidden;
+                    font-size: 1rem;
+                    margin: 0;
+                    white-space: nowrap;
+                    transition: .2s ease;
+                }
+
+                &:hover, &:focus, &:focus-within {
+                    min-width: 8rem;
+                    text-decoration: none;
+
+                    span.label-wrapper {
+                        background: rgba(255,255,255,0.45);
+                    }
+
+                    span.label {
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Mobile Responsiveness
+--------------------------------------------- */
+@media only screen and (max-width: 1650px) {
+    main.project {
+        div.title {
+            h1 {
+                font-size: 4rem;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 800px) {
+    main.project {
+        div.title {
+            h1 {
+                font-size: 2rem;
+                -webkit-text-stroke-width: 2px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 650px) {
+    main.projects {
+        ul.card-wrapper {
+            li.project-card {
+                height: 180px;
+            }
+        }
+    }
+    main.project {
+        
+        section {
+            figure.float-right {
+                float: none;
+                margin: .2rem auto;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    main.project {
+        div.projects-navigation {
+            flex-flow: column nowrap;
+            div {
+                margin: .4rem;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 500px) {
+    main.projects {
+        ul.card-wrapper {
+            li.project-card {
+                height: 220px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    main.projects {
+        ul.card-wrapper {
+            li.project-card {
+                height: 280px;
+                flex-flow: column nowrap;
+
+                a {
+                    border-top: 3px solid var(--border);
+                    border-left: none;
+                    width: 100%;
+
+                    span.label {
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Print
+--------------------------------------------- */
+@media only print {
+    main.projects {
+        ul.card-wrapper {
+            li.project-card {
+                flex-flow: column nowrap;
+                width: 90vw;
+                height: fit-content;
+
+                div.info {
+                    width: 100%;
+                    height: fit-content;
+                    h2 { 
+                        font-size: 18px; 
+                        background-color: white;
+                        border: none;
+                    }
+                    p { 
+                        font-size: 16px; 
+                    }
+                }
+                &>a {
+                    width: 100%;
+                    font-size: 16px;
+                    background-image: none;
+                    height: fit-content;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    span.label-wrapper { 
+                        flex-flow: row nowrap;
+                    }
+
+                    span.label {
+                        display: block;
+                        font-size: 16px;
+                        visibility: visible;
+                    }
+
+                    &:after {
+                        content: '(' attr(href) ')';
+                    }
+                }
+            }
+        }
+    }
+
+    main.project {
+        div.title {
+            padding: 0;
+            margin: 3px;
+            h1 {
+                font-size: 26px;
+                -webkit-text-stroke-width: 0px;
+                color: black;
+                margin: 0;
+            }
+        }
+
+        section {
+            figure:not(.iframe-figure):not(.gallery-figure) {
+
+                img {
+                    max-width: 300px;
+                    max-height: 500px;
+                    width: auto;
+                    height: auto;
+                    
+                }
+            }
+
+            div.soundcloud-src {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-flow: row wrap;
+                a {
+                    color: black;
+                }
+            }
+        }
+
+        div.projects-navigation {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,254 @@
+/*--------------------------------------------------------------
+# Pages: Home
+----------------------------------------------------------------
+Description: Styling specific to homepage
+*/
+
+// Package: rgibsonmusic
+
+// Import variables
+@use 'abstracts/colours' as *;
+
+header a.homepage-header-logo {
+    visibility: collapse;
+};
+
+main.homepage {
+    div.homepage-textbox {
+        max-width: 50vw;
+        min-width: 300px;
+        margin: 0 auto;
+        padding: 1rem;
+
+        a.button {
+            margin: .2rem auto;
+        }
+    };
+
+    div.hero {
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column nowrap;
+
+        h1 {
+            width: 60%;
+
+            .RGLogo {
+                width: 100%;
+                height: auto;
+            }
+        };
+
+        ul.title-scroller {
+            list-style-type: none;
+            font-size: 2rem;
+            height: 3rem;
+            overflow: hidden;
+            padding: 0;
+            transition: .2s ease;
+            
+            li {
+                animation: scrollTitle 18s infinite ease;
+                height: 2rem;
+                margin: 0;
+                padding: 1rem 1rem;
+                text-align: center;
+                transition: .2s ease;
+
+                &.smaller-text {
+                    font-size: 1.6rem;
+                }
+            }
+        };
+
+        a.button {
+            padding: .6rem .4rem .4rem .6rem;
+            transform: translateY(2rem);
+        }
+    }
+}
+
+@media (prefers-reduced-motion), only print {
+    main.homepage {
+        div.hero ul.title-scroller {
+            animation: none;
+            width: 95%;
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-flow: row wrap;
+
+            li {
+                animation: none;
+                height: auto;
+                padding: .3rem .6rem;
+            }
+        }
+    }
+}
+
+@keyframes scrollTitle {
+    0% {
+        transform: translateY(4rem);
+        opacity: 0%;
+    }
+    1% {
+        opacity: 100%;
+    }
+    5% {
+        transform: translateY(-0.9rem);
+        opacity: 100%;
+    }
+    15% {
+        transform: translateY(-0.9rem);
+        opacity: 100%;
+    }
+    25% {
+        transform: translateY(-5rem);
+        opacity: 100%;
+    }
+    35% {
+        transform: translateY(-5rem);
+        opacity: 100%;
+    }
+    45% {
+        transform: translateY(-8.9rem);
+        opacity: 100%;
+    }
+    55% {
+        transform: translateY(-8.9rem);
+        opacity: 100%;
+    }
+    65% {
+        transform: translateY(-12.9rem);
+        opacity: 100%;
+    }
+    75% {
+        transform: translateY(-12.9rem);
+        opacity: 100%;
+    }
+    85% {
+        transform: translateY(-16.9rem);
+        opacity: 100%;
+    }
+    95% {
+        transform: translateY(-16.9rem);
+        opacity: 100%;
+    }
+    98% {
+        transform: translateY(-20rem);
+        opacity: 100%;
+    }
+    99% {
+        transform: translateY(-20rem);
+        opacity: 0%;
+    }
+    100% {
+        transform: translateY(4rem);
+        opacity: 0%;
+    }
+}
+
+/* Mobile Responsiveness
+--------------------------------------------- */
+@media only screen and (max-width: 1400px) {
+    main.homepage {
+        div.hero {
+            height: fit-content;
+
+            h1 {
+                width: 80%;
+                height: fit-content;
+                padding: 0;
+                margin: 0;
+
+                svg {
+                    margin: 1rem auto;
+                    min-width: 280px;
+                }
+            }
+
+            &>a.button {
+                display: none;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    main.homepage {
+        div.homepage-textbox {
+            max-width: 80%;
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    main.homepage {
+        div.hero {
+
+            ul.title-scroller {
+                li {
+                    font-size: 1.4rem;
+
+                    &.smaller-text {
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+/* Print
+--------------------------------------------- */
+@media only print {
+    main.homepage {
+        div.homepage-textbox {
+            max-width: 100vw;
+            padding: 0;
+
+            h2 {
+                margin: 6px;
+            }
+
+            a.button {
+                display: none;
+            }
+        }
+        div.hero {
+            height: fit-content;
+
+            h1 {
+                height: fit-content;
+                width: auto;
+                margin: 12px;
+
+                svg.RGLogo {
+                    height: 100px;
+                    width: auto;
+                }
+            }
+
+            ul.title-scroller {
+                margin: 12px;
+                li {
+                    font-size: 18px;
+
+                    &.smaller-text {
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            a.button {
+                display: none;
+            }
+        }
+    }
+}

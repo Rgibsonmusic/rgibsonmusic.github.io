@@ -1,0 +1,107 @@
+/*--------------------------------------------------------------
+# Components: Latest
+----------------------------------------------------------------
+Description: Styling for latest news section
+*/
+
+// Package: rgibsonmusic
+
+div.latest {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    width: 100%;
+    height: fit-content;
+    box-shadow: 0px 0px 8px var(--shadow);
+    padding: .8rem 0;
+
+    h2 {
+        margin: 1rem 1.4rem;
+        color: black;
+    }
+
+    ul.latest-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-flow: row wrap;
+        list-style-type: none;
+        height: fit-content;
+        margin: 0;
+        padding: 1rem;
+
+        li.latest-card {
+            width: 280px;
+            height: 100%;
+            border: 3px solid var(--border);
+            border-radius: 8px;
+            padding: .6rem 1rem;
+            box-shadow: 2px 2px 5px var(--shadow);
+            background-color: var(--container-bg);
+            margin: .8rem;
+
+            h3 {
+                padding: 0;
+                margin: .2rem;
+                color: var(--default-pink);
+                font-weight: 700;
+            }
+
+            a.button {
+                width: fit-content;
+                margin: .6rem auto;
+            }
+        }
+    }
+};
+
+/* Print
+--------------------------------------------- */
+@media only print {
+    div.latest {
+        box-shadow: none;
+        background: none;
+        padding: 0;
+        margin: 6px 0;
+
+        h2 {
+            margin: 0;
+        }
+
+        ul.latest-wrapper {
+            flex-flow: column nowrap;
+
+            li.latest-card {
+                width: 95%;
+
+                h3 {
+                    color: black;
+                }
+
+                p {
+                    margin: 3px;
+                }
+
+                a[target="_blank"]:after {
+                    content: '(' attr(href) ')';
+                }
+
+                div.details {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    flex-flow: row nowrap;
+                }
+
+                a.button {
+                    font-size: 16px;
+                    padding: 3px 6px;
+                    border-width: 1px;
+                    background-color: white;
+                }
+            }
+        }
+    }
+}

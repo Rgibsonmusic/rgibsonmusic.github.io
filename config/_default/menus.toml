@@ -1,0 +1,30 @@
+[[main]]
+    identifier = 'home'
+    name = 'Home'
+    pre = '🏠'
+    pageRef = '/'
+    weight = 10
+[[main]]
+    identifier = 'about'
+    name = 'About'
+    pre = '👩'
+    pageRef = '/about/'
+    weight = 20
+[[main]]
+    identifier = 'projects'
+    name = 'Projects'
+    pre = '✏'
+    pageRef = '/projects/'
+    weight = 30
+[[main]]
+    identifier = 'compositions'
+    name = 'Compositions'
+    pre = '🎼'
+    pageRef = '/compositions/'
+    weight = 40
+[[main]]
+    identifier = 'contact'
+    name = 'Contact'
+    pre = '✉'
+    pageRef = '/contact/'
+    weight = 100

@@ -1,0 +1,43 @@
+/*--------------------------------------------------------------
+# Global: Links
+----------------------------------------------------------------
+Description: Styling for general inline text links
+*/
+
+// Package: rgibsonmusic
+
+a {
+    color: var(--text-link);
+    transition: .2s ease;
+    text-decoration: none;
+
+    &:focus, &:hover {
+        color: var(--text-link-hover);
+        text-decoration: underline;
+
+        i.fa-solid.fa-arrow-up-right-from-square {
+            scale: 120%;
+        }
+    };
+
+    &:active {
+        color: var(--text-link-active);
+    };
+
+    &:disabled {
+        color: var(--text-link-disabled);
+    };
+
+    i.fa-solid.fa-arrow-up-right-from-square {
+        font-size: 0.8em;
+        transition: .2s ease;
+    };
+}
+
+/* Print
+--------------------------------------------- */
+@media only print {
+    a[target="_blank"]:after {
+        content: '(' attr(href) ')';
+    }
+}

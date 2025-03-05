@@ -1,0 +1,45 @@
+{{ define "header" }}
+    
+    {{ partial "header" . }}
+
+{{ end }}
+
+{{ define "main"}}
+
+{{/*  {{ $img := ( print .RelPermalink "images/featured.webp") }}
+{{ $img := (print (relURL $img)) }}
+{{ $img := cond (fileExists $img) $img "images/featured.webp" }}  */}}
+{{ $img := .Resources.Get "images/featured.webp" }}
+    <article class="content-article">
+        <div 
+            class="title"
+            style="background-image: linear-gradient(-45deg, rgba(101, 210, 204, 0.75), rgba(222, 132, 193, 0.75), rgba(189, 203, 144, 0.75)), url({{ $img.RelPermalink }});"
+        >
+            <h1>{{ .Title }}</h1>
+        </div>
+
+        <section>
+            {{ .Content }}
+        </section>
+    </article>
+
+    <div class="projects-navigation">
+        {{ $pages := .CurrentSection.Pages }}
+        <div class="next-project">
+            {{ with $pages.ByDate.Next . }}
+            <a href="{{ .Permalink }}">{{ .Title | truncate 50 "..." }} 
+                {{ partial "icon" (dict "context" . "semantic" true "focusable" true "faStyle" "solid" "faName" "arrow-right" "alt" "Go to next project") }}
+            </a>
+            {{ end }}
+        </div>
+        
+        <div class="previous-project">
+            {{ with $pages.ByDate.Prev . }}
+            <a href="{{ .Permalink }}">
+                {{ partial "icon" (dict "context" . "semantic" true "focusable" true "faStyle" "solid" "faName" "arrow-left" "alt" "Go to previous project") }}
+            {{ .Title | truncate 50 "..."}}</a>
+            {{ end }}
+        </div>
+    </div>
+
+{{ end }}

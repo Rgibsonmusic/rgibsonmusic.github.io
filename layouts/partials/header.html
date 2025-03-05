@@ -1,0 +1,25 @@
+<header class="main-header">
+    
+    <a 
+        href="{{ relURL "" }}" 
+        aria-label="Go to homepage" 
+        {{ if .IsHome }}
+            class="homepage-header-logo"
+        {{ else }}
+            class="header-logo"
+        {{ end }}
+    >
+        {{ partial "logo_text.svg" }}
+    </a>
+
+    {{ partial "menu" (dict "menuID" "main" "page" .) }}
+
+    <div class="controls">
+        <button class="control-button" id="toggle-colour-scheme" aria-label="Toggle colour scheme">
+            {{ partial "icon" (dict "context" . "semantic" true "focusable" true "faStyle" "regular" "faName" "moon" "alt" "Current theme is light" "id" "theme-identifier-icon")}}
+        </button>
+        <button class="control-button" id="mobile-menu-button" aria-label="Navigation Menu">
+            {{ partial "icon" (dict "context" . "semantic" true "focusable" true "faStyle" "solid" "faName" "bars" "alt" "Open navigation menu" "id" "mobile-nav-identifier-icon")}}
+        </button>
+    </div>
+</header>
