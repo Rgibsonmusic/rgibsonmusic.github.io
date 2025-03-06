@@ -1,5 +1,15 @@
+{{ $email := "contact@rgibsonmusic.co.uk" }}
+{{ with resources.Get "data/contact.json" }}
+    {{ with . | transform.Unmarshal }}
+            {{ if .contact.email }}
+                {{ $email = .contact.email }}
+            {{ end }}
+    {{ end }}
+{{ end }}
 <form
 	id="contact-form"
+     action="https://formsubmit.co/{{ $email }}" 
+     method="POST"
 >
     {{ $thanksUrl := (print (relURL "contact") "?success=true&name=") }}
     <input id="contact-form__redirect" type="hidden" name="_next" value="{{ $thanksUrl }}" form="contact-form"/>
