@@ -30,6 +30,25 @@
                 "location_google_url": "https://maps.app.goo.gl/UH7Fqx6XAq1B6sFC9",
                 "link": "https://www.lso.co.uk/whats-on/soundhub-showcase-16-may-2025/",
                 "link_label": "🎟 Get tickets"
+        },
+        {
+        "show": true,
+        "title": "Department of Music Showcase",
+        "description": "Showcase of new piano works, including 'A Song for the Two of Us, Performed by Dan Whieldon and Ben Powell",
+        "date": "06 May 2026",
+        "time": "13:00",
+        "location": "Tung Auditorium, Liverpool",
+        "link_label": ""
+        },
+        {
+        "show": true,
+        "title": "Liverpool Philharmonic and University of Liverpool Partnership Concert: New Music",
+        "description": "Collaboration with musicians from the Liverpool Phil on a new work 'Prefabricated Buildings on Marshalnd', for ensemble and electronics",
+        "date": "29 June 2026",
+        "time": "19:30",
+        "location": "Tung Auditorium, Liverpool",
+        "link": "https://thetungauditorium.com/events/liverpool-philharmonic-and-university-of-liverpool-partnership-concert-new-music",
+        "link_label": "🎟 Get tickets"
         }
     ]
 }
