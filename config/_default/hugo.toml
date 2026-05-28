@@ -1,3 +1,6 @@
 baseURL = 'https://www.tabithariley.co.uk/rgibsonmusic/'
 languageCode = 'en-gb'
 title = 'Rachael Gibson'
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
